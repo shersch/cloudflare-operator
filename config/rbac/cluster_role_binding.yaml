@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: cloudflare-operator-rolebinding
+subjects:
+- kind: ServiceAccount
+  name: cloudflare-operator-controller-manager
+  namespace: cloudflare-operator-system
+roleRef:
+  kind: ClusterRole
+  name: cloudflare-operator-role
+  apiGroup: rbac.authorization.k8s.io

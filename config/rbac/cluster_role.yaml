@@ -1,0 +1,11 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: cloudflare-operator-role
+rules:
+- apiGroups: ["cloudflare.local.dev"]
+  resources: ["dnsrecords"]
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+- apiGroups: ["cloudflare.local.dev"]
+  resources: ["dnsrecords/status"]
+  verbs: ["get", "update", "patch"]
